@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = %q{A simple interface to proccessing e-mail messages using IMAP, including handling multipart messages and attachments.}
   s.email = ["paul@stadig.name"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.rdoc"]
-  s.files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.rdoc", "Rakefile", "lib/easy_imap.rb", "script/console", "script/destroy", "script/generate", "spec/easy_imap_spec.rb", "spec/spec.opts", "spec/spec_helper.rb", "tasks/rspec.rake"]
+  s.files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.rdoc", "Rakefile", "lib/easy_imap.rb", "lib/easy_imap/attachment.rb", "lib/easy_imap/folder.rb", "lib/easy_imap/message.rb", "lib/easy_imap/server.rb", "script/console", "script/destroy", "script/generate", "spec/easy_imap_spec.rb", "spec/spec.opts", "spec/spec_helper.rb", "tasks/rspec.rake"]
   s.has_rdoc = true
   s.homepage = %q{http://easy-imap.rubyforge.org/}
   s.post_install_message = %q{PostInstall.txt}
