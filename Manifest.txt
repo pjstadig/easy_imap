@@ -1,0 +1,13 @@
+History.txt
+Manifest.txt
+PostInstall.txt
+README.rdoc
+Rakefile
+lib/easy_imap.rb
+script/console
+script/destroy
+script/generate
+spec/easy_imap_spec.rb
+spec/spec.opts
+spec/spec_helper.rb
+tasks/rspec.rake
