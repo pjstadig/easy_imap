@@ -1,26 +1,35 @@
 = easy_imap
 
-* FIX (url)
+* http://easy-imap.rubyforge.org/
 
 == DESCRIPTION:
 
-FIX (describe your package)
-
-== FEATURES/PROBLEMS:
-
-* FIX (list of features or problems)
+A simple interface to proccessing e-mail messages using IMAP, including handling multipart messages and attachments.
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+Create a connection using +EasyIMAP.connect+, and with the connection you can access Folders and Messages.  To
+get a list of all Folders use +Server.folders+, to access the messages in a folder use +Folder.messages+, and to
+access the Attachments on a Message use +Message.attachments+.
+
+EasyIMAP::Server.connect('mail.example.com', :username => 'username, :password => 'password) do |conn|
+  inbox = conn.folders.first
+  inbox.messages.each do |m|
+    if m.attachments.any? && m.attachments.first.content_type == "application/vnd.ms-excel"
+      File.open("/tmp/first_attachment.xls", "w") do |f|
+        f.write(m.attachments.first.body)
+      end
+    end
+  end
+end
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* tmail
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install tmail easy_imap
 
 == LICENSE:
 

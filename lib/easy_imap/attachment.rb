@@ -4,10 +4,12 @@ module EasyIMAP
       @body = body
     end
 
+    # The mime type of this attachment.
     def content_type
       @body.content_type
     end
 
+    # The body of this attachment.
     def body
       @body.body
     end
