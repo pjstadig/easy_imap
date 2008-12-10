@@ -4,6 +4,10 @@ PostInstall.txt
 README.rdoc
 Rakefile
 lib/easy_imap.rb
+lib/easy_imap/attachment.rb
+lib/easy_imap/folder.rb
+lib/easy_imap/message.rb
+lib/easy_imap/server.rb
 script/console
 script/destroy
 script/generate
