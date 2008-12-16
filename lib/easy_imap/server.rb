@@ -24,7 +24,11 @@ module EasyIMAP
       options ||= {}
       @host = host
       @conn = Net::IMAP.new(host)#, options[:port])
-      @conn.authenticate(options[:auth_type] || "LOGIN", options[:username], options[:password])
+      if options[:auth_type].downcase == "plain"
+        @conn.login(options[:username], options[:password])
+      else
+        @conn.authenticate(options[:auth_type] || "LOGIN", options[:username], options[:password])
+      end
     end
 
     # Returns an array of Folder instances, one for each
