@@ -2,4 +2,5 @@
 *.log
 .project
 .loadpath
+doc
 

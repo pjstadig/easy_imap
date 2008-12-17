@@ -8,9 +8,9 @@ A simple interface to proccessing e-mail messages using IMAP, including handling
 
 == SYNOPSIS:
 
-Create a connection using +EasyIMAP.connect+, and with the connection you can access Folders and Messages.  To
-get a list of all Folders use +Server.folders+, to access the messages in a folder use +Folder.messages+, and to
-access the Attachments on a Message use +Message.attachments+.
+Create a connection using EasyIMAP::Server.connect, and with the connection you can access Folders and Messages.  To
+get a list of all Folders use EasyIMAP::Server#folders, to access the messages in a folder use EasyIMAP::Folder#messages, and to
+access the Attachments on a Message use EasyIMAP::Message#attachments.
 
   EasyIMAP::Server.connect('mail.example.com', :username => 'username, :password => 'password) do |conn|
     inbox = conn.folders.first
@@ -29,7 +29,7 @@ access the Attachments on a Message use +Message.attachments+.
 
 == INSTALL:
 
-* sudo gem install tmail easy_imap
+* sudo gem install easy_imap
 
 == CONTRIBUTORS:
 
