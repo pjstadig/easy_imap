@@ -11,6 +11,7 @@ lib/easy_imap/server.rb
 script/console
 script/destroy
 script/generate
+script/txt2html
 spec/easy_imap_spec.rb
 spec/spec.opts
 spec/spec_helper.rb
