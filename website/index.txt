@@ -1,0 +1,59 @@
+h1. easy_imap
+
+
+h2. What
+
+A simple interface to proccessing e-mail messages using IMAP, including handling multipart messages and attachments.
+
+h2. Installing
+
+<pre syntax="ruby">sudo gem install easy_imap</pre>
+
+h2. Requirements
+
+* tmail
+
+h2. Demonstration of usage
+
+Create a connection using EasyIMAP::Server.connect, and with the connection you can access Folders and Messages.  To get a list of all Folders use EasyIMAP::Server#folders, to access the messages in a folder use EasyIMAP::Folder#messages, and to access the Attachments on a Message use EasyIMAP::Message#attachments.
+
+<pre syntax="ruby">
+EasyIMAP::Server.connect('mail.example.com', :username => 'username, :password => 'password) do |conn|
+  inbox = conn.folders.first
+  inbox.messages.each do |m|
+    if m.attachments.any? && m.attachments.first.content_type == "application/vnd.ms-excel"
+      File.open("/tmp/first_attachment.xls", "w") do |f|
+        f.write(m.attachments.first.body)
+      end
+    end
+  end
+end
+</pre>
+
+For more details, see the <a href="/rdoc/">RDocs</a>.
+
+h2. How to submit patches
+
+Read the "8 steps for fixing other people's code":http://drnicwilliams.com/2007/06/01/8-steps-for-fixing-other-peoples-code/.
+
+You can fetch the source from:
+
+* github: "http://github.com/pjstadig/easy_imap/tree/master":http://github.com/pjstadig/easy_imap/tree/master
+
+<pre>git clone git://github.com/pjstadig/easy_imap.git</pre>
+
+h3. Build and test instructions
+
+<pre>cd easy_imap
+rake test
+rake install_gem</pre>
+
+
+h2. License
+
+This code is free to use under the terms of the MIT license. 
+
+h2. Contact
+
+Comments are welcome. Send an email to "paul@stadig.name":mailto:paul@stadig.name.
+

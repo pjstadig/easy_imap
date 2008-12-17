@@ -4,3 +4,5 @@
 .loadpath
 doc
 pkg
+website/*.html
+
