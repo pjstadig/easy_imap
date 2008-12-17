@@ -2,3 +2,9 @@
 
 * 1 major enhancement:
   * Initial release
+
+== 0.0.2 2008-12-17
+
+* 1 minor enhancement:
+  * Added support for simple LOGIN authentication. (intabulas)
+

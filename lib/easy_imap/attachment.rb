@@ -9,6 +9,10 @@ module EasyIMAP
       @body.content_type
     end
 
+    def filename
+      @body.disposition_param("filename")
+    end
+
     # The body of this attachment.
     def body
       @body.body

@@ -12,16 +12,16 @@ Create a connection using +EasyIMAP.connect+, and with the connection you can ac
 get a list of all Folders use +Server.folders+, to access the messages in a folder use +Folder.messages+, and to
 access the Attachments on a Message use +Message.attachments+.
 
-EasyIMAP::Server.connect('mail.example.com', :username => 'username, :password => 'password) do |conn|
-  inbox = conn.folders.first
-  inbox.messages.each do |m|
-    if m.attachments.any? && m.attachments.first.content_type == "application/vnd.ms-excel"
-      File.open("/tmp/first_attachment.xls", "w") do |f|
-        f.write(m.attachments.first.body)
+  EasyIMAP::Server.connect('mail.example.com', :username => 'username, :password => 'password) do |conn|
+    inbox = conn.folders.first
+    inbox.messages.each do |m|
+      if m.attachments.any? && m.attachments.first.content_type == "application/vnd.ms-excel"
+        File.open("/tmp/first_attachment.xls", "w") do |f|
+          f.write(m.attachments.first.body)
+        end
       end
     end
   end
-end
 
 == REQUIREMENTS:
 
@@ -30,6 +30,11 @@ end
 == INSTALL:
 
 * sudo gem install tmail easy_imap
+
+== CONTRIBUTORS:
+
+* Paul Stadig (pjstadig)
+* Mark Lussier (intabulas)
 
 == LICENSE:
 
