@@ -25,7 +25,7 @@ access the Attachments on a Message use EasyIMAP::Message#attachments.
 
 == REQUIREMENTS:
 
-* tmail
+* tmail, 1.2.3.1
 
 == INSTALL:
 

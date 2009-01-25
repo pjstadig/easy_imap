@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{easy_imap}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Paul Stadig"]
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.post_install_message = %q{PostInstall.txt}
   s.rdoc_options = ["--main", "README.rdoc"]
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{easy_imap}
+  s.rubyforge_project = %q{easy-imap}
   s.rubygems_version = %q{1.3.1}
   s.summary = %q{A simple interface to proccessing e-mail messages using IMAP, including handling multipart messages and attachments.}
 

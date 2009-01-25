@@ -1,4 +1,4 @@
-gem 'tmail'
+gem 'tmail', '=1.2.3.1'
 require 'tmail'
 require 'time'
 

@@ -13,3 +13,8 @@
 * 2 minor enhancement:
   * An SSL option for connecting to the server.  (Guillaume Dorchies)
   * Caching for the envelope method of Message.  (Guillaume Dorchies)
+
+== 0.0.4 2009-01-25
+
+* 1 minor enhancement:
+  * Added a specific version requirement for tmail gem.
