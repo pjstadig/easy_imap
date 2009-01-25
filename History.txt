@@ -8,3 +8,8 @@
 * 1 minor enhancement:
   * Added support for simple LOGIN authentication. (intabulas)
 
+== 0.0.3 2009-01-25
+
+* 2 minor enhancement:
+  * An SSL option for connecting to the server.  (Guillaume Dorchies)
+  * Caching for the envelope method of Message.  (Guillaume Dorchies)

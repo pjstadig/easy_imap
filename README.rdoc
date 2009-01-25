@@ -33,8 +33,11 @@ access the Attachments on a Message use EasyIMAP::Message#attachments.
 
 == CONTRIBUTORS:
 
+EasyIMAP would not be nearly as wonderful without the contributions of others.  I could not have done it myself.  Thank you to all the contributors!
+
 * Paul Stadig (pjstadig)
 * Mark Lussier (intabulas)
+* Guillaume Dorchies
 
 == LICENSE:
 

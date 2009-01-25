@@ -98,7 +98,7 @@ module EasyIMAP
     end
 
     def envelope
-      @conn.uid_fetch(@uid, "ENVELOPE").first.attr["ENVELOPE"]
+      @envelope ||= @conn.uid_fetch(@uid, "ENVELOPE").first.attr["ENVELOPE"]
     end
 
     def body
