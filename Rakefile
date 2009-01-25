@@ -16,7 +16,7 @@ $hoe = Hoe.new('easy_imap', EasyIMAP::VERSION) do |p|
   ]
 
   p.clean_globs |= %w[**/.DS_Store tmp *.log]
-  path = p.rubyforge_name#(p.rubyforge_name == p.name) ? p.rubyforge_name : "\#{p.rubyforge_name}/\#{p.name}"
+  path = p.rubyforge_name
   p.remote_rdoc_dir = File.join(path.gsub(/^#{p.rubyforge_name}\/?/,''), 'rdoc')
   p.rsync_args = '-av --delete --ignore-errors'
 end
