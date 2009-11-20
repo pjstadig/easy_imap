@@ -1,27 +1,34 @@
-%w[rubygems rake rake/clean fileutils newgem rubigen].each { |f| require f }
-require File.dirname(__FILE__) + '/lib/easy_imap'
+require 'rubygems'
+gem 'hoe', '>= 2.1.0'
+require 'hoe'
+require 'fileutils'
+require './lib/easy_imap'
+
+Hoe.plugin :newgem
+Hoe.plugin :website
 
 # Generate all the Rake tasks
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
-$hoe = Hoe.new('easy_imap', EasyIMAP::VERSION) do |p|
-  p.developer('Paul Stadig', 'paul@stadig.name')
-  p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
-  p.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
-  p.rubyforge_name       = 'easy-imap'
-  p.extra_deps         = [
+$hoe = Hoe.spec 'easy_imap' do
+  self.developer 'Paul Stadig', 'paul@stadig.name'
+  #self.changes              = self.paragraphs_of("History.txt", 0..1).join("\n\n")
+  self.post_install_message = 'PostInstall.txt'
+  self.rubyforge_name       = 'easy-imap'
+  self.extra_deps         = [
     ['tmail','>= 1.2.3.1'],
   ]
-  p.extra_dev_deps = [
-    ['newgem', ">= #{::Newgem::VERSION}"]
-  ]
+  #self.extra_dev_deps = [
+  #  ['newgem', ">= #{::Newgem::VERSION}"]
+  #]
 
-  p.clean_globs |= %w[**/.DS_Store tmp *.log]
-  path = p.rubyforge_name
-  p.remote_rdoc_dir = File.join(path.gsub(/^#{p.rubyforge_name}\/?/,''), 'rdoc')
-  p.rsync_args = '-av --delete --ignore-errors'
+  #self.clean_globs |= %w[**/.DS_Store tmp *.log]
+  #path = self.rubyforge_name
+  #self.remote_rdoc_dir = File.join(path.gsub(/^#{self.rubyforge_name}\/?/,''), 'rdoc')
+  #self.rsync_args = '-av --delete --ignore-errors'
 end
 
-require 'newgem/tasks' # load /tasks/*.rake
+require 'newgem/tasks'
 Dir['tasks/**/*.rake'].each { |t| load t }
 
+remove_task :default
 task :default => [:spec, :features]

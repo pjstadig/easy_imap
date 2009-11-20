@@ -55,5 +55,4 @@ This code is free to use under the terms of the MIT license.
 
 h2. Contact
 
-Comments are welcome. Send an email to "paul@stadig.name":mailto:paul@stadig.name.
-
+Comments are welcome. Send an email to "paul@stadig.name":mailto:paul@stadig.name?subject=[EasyIMAP]%20.
